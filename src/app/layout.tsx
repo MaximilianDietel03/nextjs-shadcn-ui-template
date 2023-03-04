@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import { Providers } from '@/components/providers';
 import '@/styles/globals.css'
 
 // https://beta.nextjs.org/docs/optimizing/fonts#with-tailwind-css
@@ -20,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }
